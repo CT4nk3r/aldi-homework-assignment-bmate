@@ -1,0 +1,8 @@
+#gitignore
+
+#nodejs
+node_modules/
+
+#playwright
+test-results/
+fixtures/
