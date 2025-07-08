@@ -84,10 +84,10 @@ test('Update a task by ID', async ({ request }) => {
 test('Delete a task by ID', async ({ request }) => {
     const taskId = '123';
 
-    const response = await request.delete(`/tasks/${taskId}`);
+    const res = await request.delete(`/tasks/${taskId}`);
 
     expect(res.status()).toBe(204);
-    expect(response.body()).toBeFalsy();
+    expect(res.body()).toBeFalsy();
 });
 ```
 
@@ -95,5 +95,5 @@ test('Delete a task by ID', async ({ request }) => {
 
 1. This was written with playwright in mind.
 2. I have done similar tests on my [github](https://github.com/CT4nk3r/playwright-api-testing/blob/main/tests/jsonplaceholder-api.test.ts) that is public.
-   1. In this case I used a Shared API Context, which was good for my usecase, but wouldn't actually be useful in a real life scenario, as parallelism would mess it up easier. I only used GET requests, so this was not a concern.
-   2. Could use thread-safe or just per-test isolation if needed.
+   - In this case I used a Shared API Context, which was good for my usecase, but wouldn't actually be useful in a real life scenario, as parallelism would mess it up easier. I only used GET requests, so this was not a concern.
+   - Could use thread-safe or just per-test isolation if needed.

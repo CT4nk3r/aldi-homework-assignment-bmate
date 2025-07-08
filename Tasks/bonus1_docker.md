@@ -24,7 +24,7 @@ Docker is an open-source platform that lets you create virtual environments with
 This is the best if we want to combine multiple applications and multiple frameworks into our own environment.
 
 ```
-FROM cypress/included:13.6.3
+FROM cypress/included:14.5.1
 
 WORKDIR /e2e
 
@@ -33,8 +33,8 @@ COPY . .
 CMD ["npx", "cypress", "run"]
 ```
 
-1. `FROM cypress/included:13.6.3`
-   - Uses the official Cypress image, version 13.6.3.
+1. `FROM cypress/included:14.5.1`
+   - Uses the official Cypress image, version 14.5.1.
    - No need to install Cypress and the browser for each run. (in the context of a CI/CD environment).
 2. `WORKDIR /e2e`
    - Sets the working directory inside the container to `/e2e`.
@@ -46,7 +46,7 @@ CMD ["npx", "cypress", "run"]
 ### Case 2: Run the tests with the official docker image without creating a new image.
 
 For headless testing:
-- Run `$ docker run -it -v $PWD:/e2e -w /e2e cypress/included:13.6.3`
+- Run `$ docker run -it -v $PWD:/e2e -w /e2e cypress/included:14.5.1`
 - Explanation of the "docker run" command line arguments
     - `-it`          = interactive terminal
     - `-v $PWD:/e2e` = map current folder to /e2e inside the container
@@ -55,7 +55,7 @@ For headless testing:
 ## Bonus
 
 ### I have created the `Dockerfile` inside `bonus_docker/`
-It can be built with `docker build -t cypress-custom .`, I used `cypress/included:latest` in my case, but the mentioned `13.6.3` can also be used. Or other versions. It can then be run with: `docker run -it -v ${PWD}:/e2e cypress-custom`, I use windows so I needed to add `{}` on the `PWD` tag.
+It can be built with `docker build -t cypress-custom .`, I used `cypress/included:latest` in my case, but the mentioned `14.5.1` can also be used. Or other versions. It can then be run with: `docker run -it -v ${PWD}:/e2e cypress-custom`, I use windows so I needed to add `{}` on the `PWD` tag.
 
 
 

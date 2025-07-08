@@ -1,9 +1,9 @@
 # Task 1: Manual Testing
 
-<b>Scenario</b>: You are given the ALDI US website (new.aldi.us) where users can browse products and
+**Scenario**: You are given the ALDI US website (new.aldi.us) where users can browse products and
 create shopping lists.
 
-<b>Test Case Creation</b>: Write three test cases for the "Add to Shopping List" feature on the website,
+**Test Case Creation**: Write three test cases for the "Add to Shopping List" feature on the website,
 focusing on both positive and negative scenarios, define the fields that you feel necessary for
 the test cases
 
@@ -49,8 +49,8 @@ the test cases
 | ------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------ | ----------------------------------------------------------------------------------- |
 | TC_SL_ADD_002 | 1. Navigate to a product's page. <br> 2. Click "Add to Shopping List" button. <br> 3. Go to the shopping list page. <br> 4. Locate the added product. <br> 5. Increase the product quantity to a value greater than 1 (e.g., 3). | 1. Product is added to the shopping list with quantity 1. <br> 2. Shopping list page displays the added product. <br> 3. After increasing the quantity, the shopping list updates to show the new quantity. <br> 4. The total item count and any price calculations update accordingly. <br> | 1. Product is added to the shopping list with quantity 1. <br> 2. Shopping list page displays the added product. <br> 3. After increasing the quantity, the shopping list updates to show the new quantity. <br> 4. The total item count updates correctly, but price calculation does not update. | Fail   | The price is not recalculated after incrementing the shopping list item's quantity. |
 
-## Test Case 2:
-### 
+## Test Case 3:
+### Add the Same Product Multiple Times
 
 | Field           | Value                                                                                                                                                                    |
 | --------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |

@@ -14,7 +14,7 @@ Playwright for the "Login" feature. Include:
 #### 1. Download Node.js
 
 1. Navigate to the [Node.js website](https://nodejs.org/en/download) and download the correct version for your operating system. For this is going to be the windows installer.
-2. Run `node-v22.17.0-x64` and during the install make sure tthe correct environmental variables are working with running `npm -v`
+2. Run `node-v22.X.X-x64` and during the install make sure tthe correct environmental variables are working with running `npm -v`
 3. Should return the version of npm
 
 #### 2. Initialize the project.
