@@ -4,15 +4,16 @@ const userData = require('../fixtures/userData.json'); // Import user data from 
 test.describe('Login Feature', () => {
 
   test.beforeEach(async ({ page }) => {
-    await page.goto('https://www.aldi.hu/hu/log-in.html');
-    
-    const rejectBtn = page.locator('#onetrust-reject-all-handler');
+    await page.goto('/hu/log-in.html');
     
     await page.click('.at-login_lnk');
 
-    //cookie button accept
-    if (await rejectBtn.isVisible()) {
-      await rejectBtn.click({timeout:5000});
+    const rejectBtn = page.locator('#onetrust-reject-all-handler');
+    try {
+      await rejectBtn.waitFor({ state: 'visible', timeout: 5000 });
+      await rejectBtn.click();
+    } catch (error) {
+      console.log("No cookie popup");
     }
 
     await expect(page).toHaveURL(/.*\/hu\/log-in.html/);
@@ -29,7 +30,7 @@ test.describe('Login Feature', () => {
   });
 
   test('should show an error on failed login', async ({ page }) => {
-    await page.fill('#member_login_email', userData.email);
+    await page.fill('#member_login_email', 'wrongusername');
     await page.fill('#member_login_password', 'wrongpassword');
 
     await page.click('#login_submit');
