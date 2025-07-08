@@ -9,3 +9,5 @@
   - playwright
     - [Playwright Test for VSCode](https://marketplace.visualstudio.com/items?itemName=ms-playwright.playwright)
     - [Playwright Test Snippets](https://marketplace.visualstudio.com/items?itemName=mskelton.playwright-test-snippets)
+- Docker
+  - [Container Tools](https://marketplace.visualstudio.com/items?itemName=ms-azuretools.vscode-containers)
