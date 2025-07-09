@@ -5,4 +5,4 @@ node_modules/
 
 #playwright
 test-results/
-fixtures/
+#fixtures/ #I commit it, so it can be used as an example

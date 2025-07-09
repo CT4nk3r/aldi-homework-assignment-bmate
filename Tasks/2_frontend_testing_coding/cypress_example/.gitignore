@@ -2,6 +2,3 @@
 
 #nodejs
 node_modules/
-
-#this is where you put the username and password of the user, for my testing this was my own
-userData.json
