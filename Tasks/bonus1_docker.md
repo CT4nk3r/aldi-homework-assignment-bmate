@@ -52,6 +52,28 @@ For headless testing:
     - `-v $PWD:/e2e` = map current folder to /e2e inside the container
     - `-w /e2e`      = set working directy to /e2e
 
+### How I would set up an automated testing environment using Docker
+
+I would create a `docker-compose.yml` that would be able to start my cypress tests:
+
+```yml
+version: '3'
+services:
+  web:
+    image: your-web-app-image
+    ports:
+      - "3000:3000"
+    environment:
+      - NODE_ENV=development
+
+  cypress:
+    build: .
+    depends_on:
+      - web
+    environment:
+      - CYPRESS_baseUrl=http://web:3000
+```
+
 ## Bonus
 
 ### I have created the `Dockerfile` inside `bonus_docker/`
